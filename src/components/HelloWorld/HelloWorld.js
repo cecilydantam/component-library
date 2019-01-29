@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/** what a fancy component oh boy oh gee */
+/** helloooo world */
 function HelloWorld({message}) {
     return <div>Hello {message}</div>
 }

@@ -1,8 +1,7 @@
-
 import React from 'react';
-import HelloWorld from '../../../components/HelloWorld/HelloWorld';
+import HelloWorld from 'component-library/HelloWorld';
 
 /** See it in action */
 export default function ExampleHelloWorld() {
-  return <HelloWorld message="dantam babies!" />
+  return <HelloWorld message="mundo!" />
 }
