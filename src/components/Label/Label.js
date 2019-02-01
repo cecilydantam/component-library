@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import InputLabel from '@material-ui/core/InputLabel';
 
 /** Label with required field display, htmlFor, and block styling */
 function Label({htmlFor, label, required}) {
   return (
-    <label style={{display: 'block'}} htmlFor={htmlFor}>
+    <InputLabel style={{display: 'block'}} htmlFor={htmlFor}>
       {label} { required && <span style={{color: 'red'}}> *</span> }
-    </label>
+    </InputLabel>
   )
 }
 
