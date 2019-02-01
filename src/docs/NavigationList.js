@@ -22,13 +22,6 @@ const NavigationList = ({components}) => {
     console.log(components);
   return (
     <div className="navigation">
-      <List component="nav">
-        <ListItem>
-          <ListItemText primary="Component Library" />
-          <small>v1.0</small>
-        </ListItem>
-      </List>
-      <Divider />
       <List>
       {
         components.map( name => {

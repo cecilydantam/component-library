@@ -2,6 +2,7 @@ import React from 'react';
 import ComponentPage from './ComponentPage';
 import componentData from '../../config/componentData';
 import NavigationList from './NavigationList';
+import LibraryAppBar from './LibraryAppBar';
 
 export default class Docs extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ export default class Docs extends React.Component {
       <div>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
         <NavigationList components={componentData.map(component => component.name)} />
+        <LibraryAppBar />
         <ComponentPage component={component} />
       </div>
     )
