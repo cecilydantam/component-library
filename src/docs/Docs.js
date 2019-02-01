@@ -1,7 +1,7 @@
 import React from 'react';
-import Navigation from './Navigation';
 import ComponentPage from './ComponentPage';
 import componentData from '../../config/componentData';
+import NavigationList from './NavigationList';
 
 export default class Docs extends React.Component {
   constructor(props) {
@@ -23,7 +23,8 @@ export default class Docs extends React.Component {
 
     return (
       <div>
-        <Navigation components={componentData.map(component => component.name)} />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+        <NavigationList components={componentData.map(component => component.name)} />
         <ComponentPage component={component} />
       </div>
     )

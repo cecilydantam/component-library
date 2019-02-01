@@ -4,6 +4,7 @@ import Example from './Example';
 import Props from './Props';
 
 const ComponentPage = ({component}) => {
+  console.log(component);
   const {name, description, props, examples} = component;
 
   return (
