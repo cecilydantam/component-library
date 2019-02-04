@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a proof of concept on how to create a library of reusable, self-documenting react components.
 
-## Available Scripts
+## Create a Component
 
-In the project directory, you can run:
+Create a directory with the same name as your component.  This allows the pre-build script to find your component and compile metadata on it.
 
-### `npm start`
+### `index.js`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Create a file in your directory called `index.js`.  It should contain the export statement `export {default} from './ComponentName';`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This helps to shorten import statements and make them less redundant.
 
-### `npm test`
+### `material-ui`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use Google's material-ui library for smaller building blocks: [Material-UI](https://material-ui.com/)
 
-### `npm run build`
+Declare your props on component.PropTypes. The build script will read these and display the expected props and their types in a table.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Examples
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Under docs -> examples, create a folder with the same name as your component, and create implementations for your component.  Be thorough and show all different possible states.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The build scripts will throw an error if there is a component without an example.
 
-### `npm run eject`
+## How it works
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `generateComponentData.js`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+When the application runs, a build script will extract all of the component code and store it in `config -> componentData.js`. The documentation site reads from this file to build each component page.  The scripts section of package.json shows the build process.
