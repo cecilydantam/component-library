@@ -51,47 +51,62 @@ class RegistrationForm extends React.Component {
     const {email, password} = this.state.user;
 
     return (
-      <div class="login-container">
-        <h1>Welcome to Our System</h1>
-        <p>Access to this system is only allowed for authorized users. 
-            Our login process better protects the privacy and security of your personal information. 
-            Please note, your username and password is <strong>case sensitive</strong>.</p>
-        
-        <div class="email-container">
-            <TextInput
-                htmlId="login-form-email"
-                name="email"
-                onChange={this.onChange}
-                label="Email"
-                value={email}
-                error={errors.email}
-                required />
-        </div>
+      <div class="login-component">
+        <div class="login-container">
+            <h1>Welcome to Our System</h1>
+            <p>Access to this system is only allowed for authorized users. 
+                Our login process better protects the privacy and security of your personal information. 
+                Please note, your username and password is <strong>case sensitive</strong>.</p>
+            
+            <div class="email-container">
+                <TextInput
+                    htmlId="login-form-email"
+                    name="email"
+                    onChange={this.onChange}
+                    label="Email"
+                    value={email}
+                    error={errors.email}
+                    required />
+            </div>
 
-        <div class="password-container">
-            <PasswordInput
-                htmlId="login-form-password"
-                label="Password"
-                name="password"
-                value={password}
-                onChange={() => {}} />
-        </div>
-        
-        <div class="submit-container">
-            <Button variant="contained" className="login" onClick={this.onSubmit}>Login</Button>
+            <div class="password-container">
+                <PasswordInput
+                    htmlId="login-form-password"
+                    label="Password"
+                    name="password"
+                    value={password}
+                    onChange={() => {}} />
+            </div>
+            
+            <div class="submit-container">
+                <Button variant="contained" className="login" onClick={this.onSubmit}>Login</Button>
 
-            <Button variant="outlined" className="forgot-password">Forgot Your Password?</Button>
-        </div>
+                <Button variant="outlined" className="forgot-password">Forgot Your Password?</Button>
+            </div>
 
-        <Divider />
+            <Divider />
 
-        <div class="register-container">
-            <p>Don't have an account?</p>
-            <div class="register-button-container">
-                <Button variant="contained" className="register" onClick={this.onSubmit}>Register</Button>
+            <div class="register-container">
+                <p>Don't have an account?</p>
+                <div class="register-button-container">
+                    <Button variant="contained" className="register" onClick={this.onSubmit}>Register</Button>
+                </div>
             </div>
         </div>
+        <div class="browser-requirements">
+        <p>
+            <strong>Browser Requirements</strong>
+            This website is designed using new technology and best practices in web standards.  
+            If you are using an older browser, we recommend you upgrade your browser to properly view our website.  
+            This website is optimized for the following browsers:
+        </p>
+        <ul>
+            <li>Microsoft Internet Explorer 8 or greater, version 11 is preferred</li>
+            <li>Mozilla Firefox 4.0 or greater</li>
+            <li>Google Chrome</li>
+        </ul>
       </div>
+    </div>
     )
   }
 }
