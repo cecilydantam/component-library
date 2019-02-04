@@ -18,7 +18,7 @@ function TextInput({htmlId, name, label, type = "text", required = false, onChan
         error={error}
         {...props}/>
         {children}
-      {error && <div className="error" style={{color: 'red'}}>{error}</div>}
+      <small>{error && <div className="error" style={{color: 'red'}}>{error}</div>}</small>
     </div>
   );
 };

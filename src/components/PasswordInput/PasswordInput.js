@@ -49,7 +49,7 @@ class PasswordInput extends React.Component {
           style={this.props.error && {border: 'solid 1px red'}}
           {...this.props}/>
           {this.props.children}
-        {this.props.error && <div className="error" style={{color: 'red'}}>{this.props.error}</div>}
+        <small>{this.props.error && <div className="error" style={{color: 'red'}}>{this.props.error}</div>}</small>
       </div>
     );
   }

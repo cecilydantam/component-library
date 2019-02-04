@@ -41,7 +41,9 @@ const Props = ({props}) => {
               <TableCell align="left">{props[key].description}</TableCell>
               <TableCell align="left">{props[key].type.name}</TableCell>
               <TableCell align="left">{props[key].defaultValue && props[key].defaultValue.value}</TableCell>
-              <TableCell align="left">{props[key].required && "X"}</TableCell>
+              <TableCell align="left">{props[key].required &&
+                  "X"
+              }</TableCell>
             </TableRow>
           ))}
         </TableBody>
