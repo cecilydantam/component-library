@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../TextInput';
 import PasswordInput from '../PasswordInput';
+import Button from '@material-ui/core/Button';
 
 /** Registration form with built-in validation. */
 class RegistrationForm extends React.Component {
@@ -82,7 +83,7 @@ class RegistrationForm extends React.Component {
           maxLength={50}
           error={errors.password} />
 
-        <input type="submit" value="Register" onClick={this.onSubmit} />
+        <Button color="primary" onClick={this.onSubmit}>Register</Button>
       </div>
     )
   }

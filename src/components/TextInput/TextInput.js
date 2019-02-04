@@ -15,7 +15,7 @@ function TextInput({htmlId, name, label, type = "text", required = false, onChan
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        style={error && {border: 'solid 1px red'}}
+        error={error}
         {...props}/>
         {children}
       {error && <div className="error" style={{color: 'red'}}>{error}</div>}

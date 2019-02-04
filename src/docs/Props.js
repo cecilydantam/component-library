@@ -1,34 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 700,
+  },
+});
 
 const Props = ({props}) => {
   return (
-    <table className="props">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
-        </tr>
-      </thead>
-      <tbody>
-      {
-        Object.keys(props).map(key => {
-          return (
-            <tr key={key}>
-              <td>{key}</td>
-              <td>{props[key].description}</td>
-              <td>{props[key].type.name}</td>
-              <td>{props[key].defaultValue && props[key].defaultValue.value}</td>
-              <td>{props[key].required && "X"}</td>
-            </tr>
-          );
-        })
-      }
-      </tbody>
-    </table>
+    <Paper className="propsTable">
+      <Table className="props">
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell align="left">Description</TableCell>
+            <TableCell align="left">Type</TableCell>
+            <TableCell align="left">Default</TableCell>
+            <TableCell align="left">Required</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {Object.keys(props).map(key => (
+            <TableRow key={key}>
+              <TableCell component="th" scope="row">
+                {key}
+              </TableCell>
+              <TableCell align="left">{props[key].description}</TableCell>
+              <TableCell align="left">{props[key].type.name}</TableCell>
+              <TableCell align="left">{props[key].defaultValue && props[key].defaultValue.value}</TableCell>
+              <TableCell align="left">{props[key].required && "X"}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Paper>
   )
 }
 
@@ -36,4 +54,4 @@ Props.propTypes = {
   props: PropTypes.object.isRequired
 };
 
-export default Props;
+export default withStyles(styles)(Props);

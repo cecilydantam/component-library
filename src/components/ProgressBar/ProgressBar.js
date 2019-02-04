@@ -1,25 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
+
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+};
 
 class ProgressBar extends React.Component {
-  getColor = (percent) => {
-    if (this.props.percent === 100) return 'green';
-    return this.props.percent > 50 ? 'lightgreen' : 'red';
-  }
-
-  getWidthAsPercentOfTotalWidth = () => {
-    return parseInt(this.props.width * (this.props.percent / 100), 10);
-  }
-
   render() {
-    const {percent, width, height} = this.props;
     return (
-      <div style={{border: 'solid 1px lightgray', width: width}}>
-        <div style={{
-          width: this.getWidthAsPercentOfTotalWidth(),
-          height,
-          backgroundColor: this.getColor(percent)
-        }} />
+      <div className="progressBar">
+        <LinearProgress variant="determinate" value={this.props.percent} />
       </div>
     );
   }
@@ -28,16 +22,10 @@ class ProgressBar extends React.Component {
 ProgressBar.propTypes = {
   /** Percent of progress completed */
   percent: PropTypes.number.isRequired,
-
-  /** Bar width */
-  width: PropTypes.number.isRequired,
-
-  /** Bar height */
-  height: PropTypes.number
 };
 
 ProgressBar.defaultProps = {
-  height: 5
+  percent: 0
 };
 
-export default ProgressBar;
+export default withStyles(styles)(ProgressBar);

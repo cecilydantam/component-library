@@ -3,5 +3,5 @@ import ProgressBar from 'component-library/ProgressBar';
 
 /** 70% progress */
 export default function Example70Percent() {
-  return <ProgressBar percent={70} width={150} />
+  return <ProgressBar percent={70} />
 }

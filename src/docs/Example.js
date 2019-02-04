@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CodeExample from './CodeExample';
+import Button from '@material-ui/core/Button';
 
 class Example extends React.Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class Example extends React.Component {
         <ExampleComponent />
 
         <p>
-          <a href="" onClick={this.toggleCode}>
+          <Button className="toggleCode" onClick={this.toggleCode}>
             {showCode ? "Hide" : "Show"} Code
-          </a>
+          </Button>
         </p>
 
         {showCode && <CodeExample>{code}</CodeExample>}

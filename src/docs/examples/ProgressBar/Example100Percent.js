@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from 'component-library/ProgressBar';
 
-/** 100% progress and height 20px */
+/** 100% progress*/
 export default function Example100Percent() {
-  return <ProgressBar percent={100} width={150} height={20} />
+  return <ProgressBar percent={100} />
 }

@@ -4,6 +4,8 @@ This project is a proof of concept on how to create a library of reusable, self-
 
 Create a directory with the same name as your component.  This allows the pre-build script to find your component and compile metadata on it. Ex, MyComponent -> MyComponent.js
 
+Describe your component with comments above the declaration - these will render in the component's documentation.  Also, decorate each prop declared in propTypes with a comment.  This comment will render as 'description' in the table of props.
+
 ### index.js
 
 Create a file in your component directory called `index.js`.  It should contain the export statement 
