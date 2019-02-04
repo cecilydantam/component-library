@@ -32,4 +32,4 @@ When the application runs, a build script will extract all of the component code
 
 ## Architecture
 
-![Component Architecture](component-architecture.png)
+![Component Architecture](https://github.com/cecilydantam/component-library/blob/master/Component-Architecture.png)
