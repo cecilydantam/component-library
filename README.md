@@ -29,3 +29,7 @@ The build scripts will throw an error if there is a component without an example
 ### generateComponentData.js
 
 When the application runs, a build script will extract all of the component code and store it in `config -> componentData.js`. The documentation site reads from this file to build each component page.  The scripts section of package.json shows the build process.
+
+## Architecture
+
+![Component Architecture](component-architecture.png)
