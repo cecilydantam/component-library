@@ -52,34 +52,45 @@ class RegistrationForm extends React.Component {
 
     return (
       <div class="login-container">
-        <h1>Welcome to Connect Your Care</h1>
+        <h1>Welcome to Our System</h1>
         <p>Access to this system is only allowed for authorized users. 
             Our login process better protects the privacy and security of your personal information. 
             Please note, your username and password is <strong>case sensitive</strong>.</p>
+        
+        <div class="email-container">
+            <TextInput
+                htmlId="login-form-email"
+                name="email"
+                onChange={this.onChange}
+                label="Email"
+                value={email}
+                error={errors.email}
+                required />
+        </div>
 
-        <TextInput
-          htmlId="login-form-email"
-          name="email"
-          onChange={this.onChange}
-          label="Email"
-          value={email}
-          error={errors.email}
-          required />
+        <div class="password-container">
+            <PasswordInput
+                htmlId="login-form-password"
+                label="Password"
+                name="password"
+                value={password}
+                onChange={() => {}} />
+        </div>
+        
+        <div class="submit-container">
+            <Button variant="contained" className="login" onClick={this.onSubmit}>Login</Button>
 
-        <PasswordInput
-            htmlId="login-form-password"
-            label="Password"
-            name="password"
-            value={password}
-            onChange={() => {}} />
+            <Button variant="outlined" className="forgot-password">Forgot Your Password?</Button>
+        </div>
 
-        <Button variant="outlined" color="primary" onClick={this.onSubmit}>Login</Button>
+        <Divider />
 
-        <Button className="forgot-password">Forgot Your Password?</Button>
-
-        <Divider variant="middle" />
-
-        <p>Don't have an account?</p> <Button variant="outlined" color="primary" onClick={this.onSubmit}>Register</Button>
+        <div class="register-container">
+            <p>Don't have an account?</p>
+            <div class="register-button-container">
+                <Button variant="contained" className="register" onClick={this.onSubmit}>Register</Button>
+            </div>
+        </div>
       </div>
     )
   }

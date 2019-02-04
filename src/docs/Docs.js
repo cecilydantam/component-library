@@ -3,6 +3,7 @@ import ComponentPage from './ComponentPage';
 import componentData from '../../config/componentData';
 import NavigationList from './NavigationList';
 import LibraryAppBar from './LibraryAppBar';
+import 'typeface-roboto'
 
 export default class Docs extends React.Component {
   constructor(props) {

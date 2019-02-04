@@ -1,3 +1,49 @@
 .login-container {
     background-color: white;
+    box-shadow: 10px 10px 10px -5px rgba(0,0,0,0.3);
+    font-family: 'Roboto';
+    padding: 8%;
+
+    h1 {
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .email-container {
+        margin: 60px 10px 10px 10px;
+    }
+
+    .password-container {
+        margin: 40px 10px;
+    }
+    .submit-container {
+        margin: 40px 10px;
+
+        .forgot-password {
+            display: block;
+            margin: 20px 0;
+        }
+
+        .login {
+            background-color: #49840d;
+            color: white;
+        }
+    }
+
+    .register-container {
+        margin: 40px 10px 0 10px;
+
+        .register-button-container {
+            display: block;
+            margin: 20px 0;
+    
+            .register {
+                background-color: #49840d;
+                color: white;
+            }
+        }
+    }
 }
